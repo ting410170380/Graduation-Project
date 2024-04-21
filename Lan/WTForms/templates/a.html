@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="/static/a.css">
+        <title>Title</title>
+    </head>
+    <body>
+        <form method="post">
+            {{ form.user_name.label }}
+            <p>{{ form.user_name(class="to_red") }}</p>
+            {% for msg in form.user_name.errors %}
+            <p>{{ msg(class="to_red") }}</p>
+            {% endfor %}
+
+            {{ form.password.label }}
+            <p>{{ form.password }}</p>
+            {% for msg in form.password.errors %}
+            <p>{{ msg }}</p>
+            {% endfor %}
+
+            {{ form.password2.label }}
+            <p>{{ form.password2 }}</p>
+            {% for msg in form.password2.errors %}
+            <p>{{ msg }}</p>
+            {% endfor %}
+
+            <p>{{ form.submit }}</p>
+        </form>
+    </body>
+</html>
